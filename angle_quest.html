@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angle Quest — JSS1 Maths</title><link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="angle_quest.css">
+</head>
+<body>
+<!-- ══ LANDING PAGE ════════════════════════════════════════════ -->
+<div id="scr-landing" class="screen active">
+
+ <!-- 4 corner background photos -->
+  <div class="land-photo lp1"><img src="Photo_1.png" alt=""></div>
+<div class="land-photo lp2"><img src="Photo_2.png" alt=""></div>
+<div class="land-photo lp3"><img src="Photo_3.png" alt=""></div>
+<div class="land-photo lp4"><img src="Photo_4.png" alt=""></div>  <!-- Main content -->
+  <div class="land-content">
+
+    <!-- Big title -->
+    <h1 class="land-title">Angle Family</h1>
+
+    <!-- Subtitle in arc form with bouncy animation -->
+    <div class="land-arc-wrap">
+      <svg class="land-arc-svg" viewBox="0 0 740 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="subtitle-arc" d="M 20 125 Q 370 15 720 125"/>    <linearGradient id="arc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#FF4EB8"/>
+            <stop offset="33%"  stop-color="#FFD60A"/>
+            <stop offset="66%"  stop-color="#80ED99"/>
+            <stop offset="100%" stop-color="#00B4D8"/>
+          </linearGradient>
+        </defs>
+        <text font-family="Nunito, Arial" font-size="22" font-weight="800" fill="url(#arc-grad)">
+          <textPath href="#subtitle-arc" startOffset="50%" text-anchor="middle">
+            Instructional Learning Package for Grade 7 Students
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Glowing continue button -->
+    <button class="land-btn" onclick="show('nickname')">
+      Continue
+      <span class="land-btn-arrow">&#8594;</span>
+    </button>
+
+  </div>
+</div>
+<!-- ══ NICKNAME SCREEN ═════════════════════════════════════════ -->
+<div id="scr-nickname" class="screen">
+
+  <div class="nick-star ns1">⭐</div>
+  <div class="nick-star ns2">🌟</div>
+  <div class="nick-star ns3">✨</div>
+  <div class="nick-star ns4">💫</div>
+  <div class="nick-star ns5">⭐</div>
+  <div class="nick-star ns6">🌟</div>
+
+  <div class="nick-card">
+
+    <div class="nick-icon">🎓</div>
+
+    <h2 class="nick-title">What is your <span>Nickname?</span></h2>
+    <p class="nick-sub">This is what we will call you throughout the activity!</p>
+
+    <div class="nick-input-wrap">
+      <span class="nick-pencil">✏️</span>
+      <input
+        type="text"
+        id="nick-input"
+        class="nick-input"
+        placeholder="Type your nickname here..."
+        maxlength="20"
+        oninput="clearNickError()"
+      >
+    </div>
+
+    <div class="nick-error" id="nick-error">
+      ⚠️ Please enter your nickname before continuing!
+    </div>
+
+    <button class="nick-btn" onclick="submitNickname()">
+      Let's Go! 🚀
+    </button>
+    <button class="nick-back-btn" onclick="show('landing')">
+      ← Back to Home
+    </button>
+    
+  </div>
+</div>
+<!-- ══ WELCOME SCREEN ══════════════════════════════════════════ -->
+<div id="scr-welcome" class="screen">
+
+  <!-- Background sparkles -->
+  <div class="wel-spark ws1">✨</div>
+  <div class="wel-spark ws2">⭐</div>
+  <div class="wel-spark ws3">💫</div>
+  <div class="wel-spark ws4">✨</div>
+  <div class="wel-spark ws5">⭐</div>
+
+  <div class="wel-container">
+
+    <!-- Alfred the Snail -->
+    <div class="alfred-wrap">
+      <svg class="alfred-svg" viewBox="0 0 380 290" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sg" cx="38%" cy="32%" r="68%">
+            <stop offset="0%"   stop-color="#FFD60A"/>
+            <stop offset="28%"  stop-color="#FF4EB8"/>
+            <stop offset="58%"  stop-color="#9D4EDD"/>
+            <stop offset="82%"  stop-color="#00B4D8"/>
+            <stop offset="100%" stop-color="#80ED99"/>
+          </radialGradient>
+          <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#a8f0c0"/>
+            <stop offset="100%" stop-color="#3aaa55"/>
+          </linearGradient>
+          <linearGradient id="belly" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#d4f7e0"/>
+            <stop offset="100%" stop-color="#90e8a8"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Shadow -->
+        <ellipse cx="185" cy="272" rx="145" ry="12" fill="rgba(0,0,0,0.18)"/>
+
+        <!-- SHELL -->
+        <circle id="alfred-shell" cx="268" cy="146" r="84"
+                fill="url(#sg)" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+        <circle cx="268" cy="146" r="62" fill="none"
+                stroke="rgba(255,255,255,0.28)" stroke-width="2.5"/>
+        <circle cx="268" cy="146" r="40" fill="none"
+                stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+        <circle cx="268" cy="146" r="20" fill="none"
+                stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <circle cx="268" cy="146" r="7"  fill="rgba(255,255,255,0.25)"/>
+        <!-- Shell shine -->
+        <ellipse cx="240" cy="118" rx="24" ry="15"
+                 fill="rgba(255,255,255,0.28)" transform="rotate(-30 240 118)"/>
+
+        <!-- BODY -->
+        <ellipse cx="172" cy="210" rx="118" ry="44" fill="url(#bg)"/>
+        <!-- Belly -->
+        <ellipse cx="172" cy="226" rx="104" ry="22" fill="url(#belly)"/>
+
+        <!-- TAIL -->
+        <path d="M 278 218 Q 308 234 298 256 Q 286 268 272 256"
+              fill="url(#bg)"/>
+
+        <!-- HEAD -->
+        <circle cx="68" cy="180" r="56" fill="url(#bg)"/>
+        <!-- Head highlight -->
+        <ellipse cx="50" cy="160" rx="18" ry="13"
+                 fill="rgba(255,255,255,0.2)" transform="rotate(-22 50 160)"/>
+
+        <!-- CHEEKS -->
+        <ellipse cx="40"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+        <ellipse cx="98"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+
+        <!-- LEFT EYE STALK -->
+        <path id="alfred-stalk-l"
+              d="M 52 134 C 44 112 38 96 32 79"
+              stroke="#3aaa55" stroke-width="8"
+              fill="none" stroke-linecap="round"/>
+        <!-- Left eye -->
+        <circle id="alfred-eye-l" cx="30" cy="74" r="16"
+                fill="white" stroke="#e0e0e0" stroke-width="1"/>
+        <circle cx="33" cy="75" r="9"  fill="#1A1A2E"/>
+        <circle cx="38" cy="70" r="4"  fill="white"/>
+        <!-- Left antenna ball -->
+        <circle cx="27" cy="58" r="7"  fill="#FFD60A"
+                stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+
+        <!-- RIGHT EYE STALK -->
+        <path id="alfred-stalk-r"
+              d="M 84 128 C 90 106 95 90 100 72"
+              stroke="#3aaa55" stroke-width="8"
+              fill="none" stroke-linecap="round"/>
+        <!-- Right eye -->
+        <circle id="alfred-eye-r" cx="102" cy="68" r="16"
+                fill="white" stroke="#e0e0e0" stroke-width="1"/>
+        <circle cx="105" cy="69" r="9"  fill="#1A1A2E"/>
+        <circle cx="110" cy="64" r="4"  fill="white"/>
+        <!-- Right antenna ball -->
+        <circle cx="104" cy="52" r="7"  fill="#FF4EB8"
+                stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+
+        <!-- NOSTRILS -->
+        <ellipse cx="58" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+        <ellipse cx="74" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+
+        <!-- SMILE -->
+        <path d="M 40 202 Q 68 226 98 202"
+              fill="none" stroke="#1A1A2E"
+              stroke-width="4.5" stroke-linecap="round"/>
+        <!-- Tongue -->
+        <path d="M 58 218 Q 68 230 78 218"
+              fill="#FF4EB8" stroke="rgba(180,0,70,0.25)" stroke-width="1"/>
+
+        <!-- BODY DOTS -->
+        <circle cx="148" cy="198" r="5" fill="rgba(255,255,255,0.22)"/>
+        <circle cx="180" cy="192" r="4" fill="rgba(255,255,255,0.18)"/>
+        <circle cx="212" cy="202" r="5" fill="rgba(255,255,255,0.22)"/>
+      </svg>
+
+      <!-- Name tag -->
+      <div class="alfred-nametag">✨ Alfred the Snail ✨</div>
+    </div>
+
+    <!-- White Speech Bubble -->
+    <div class="speech-bubble">
+      <h2 class="sb-hi" id="alfred-greeting">Hey Explorer! 👋</h2>
+      <p class="sb-msg">I am <strong>Alfred the Snail</strong> and I am your guide through the amazing world of <span class="sb-em">Angles!</span> Grab your ruler and protractor and let us get started on this adventure!</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="wel-btns">
+      <button class="wel-primary" onclick="show('pick')">View Modules 📚</button>
+      <button class="wel-back"    onclick="show('nickname')">← Back</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ PICK ANGLE SCREEN ═══════════════════════════════════════ -->
+<div id="scr-pick" class="screen">
+
+  <div class="mod-header">
+    <h2 class="mod-title">📚 Learning <span>Modules</span></h2>
+    <p class="mod-sub">Choose a module below to start drawing that type of angle</p>
+<button class="mod-game-btn" onclick="show('game-menu')">🎮 Alfred's Angle Adventure</button>  </div>
+
+  <!-- Module Cards -->
+  <div class="mod-cards">
+
+    <!-- Module 1 -->
+    <div class="mod-card mc1" onclick="showModule(1)">
+      <div class="mc-badge">Module 1</div>
+      <div class="mc-svg-wrap">
+        <svg viewBox="0 0 110 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Acute angle ~50° vertex at bottom left -->
+          <line x1="14" y1="70" x2="96" y2="70" stroke="#00B4D8" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="14" y1="70" x2="58" y2="18" stroke="#00B4D8" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M 34 70 A 20 20 0 0 1 23 51" fill="none" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="38" y="66" font-size="13" fill="#00B4D8" font-family="Arial" font-weight="bold">50°</text>
+          <!-- Vertex dot -->
+          <circle cx="14" cy="70" r="4" fill="#00B4D8"/>
+        </svg>
+      </div>
+      <div class="mc-info">
+        <h3 class="mc-name">Acute Angle</h3>
+        <p class="mc-desc">A sharp angle that is smaller than a right angle</p>
+        <span class="mc-range">0° to 90°</span>
+      </div>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="mod-card mc2" onclick="showModule(2)">
+      <div class="mc-badge">Module 2</div>
+      <div class="mc-svg-wrap">
+        <svg viewBox="0 0 110 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Obtuse angle ~120° vertex at bottom center -->
+          <line x1="14" y1="70" x2="96" y2="70" stroke="#FF4EB8" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="55" y1="70" x2="20" y2="24" stroke="#FF4EB8" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M 73 70 A 18 18 0 0 1 40 56" fill="none" stroke="#FF4EB8" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="50" y="65" font-size="13" fill="#FF4EB8" font-family="Arial" font-weight="bold">120°</text>
+          <!-- Vertex dot -->
+          <circle cx="55" cy="70" r="4" fill="#FF4EB8"/>
+        </svg>
+      </div>
+      <div class="mc-info">
+        <h3 class="mc-name">Obtuse Angle</h3>
+        <p class="mc-desc">A wide angle that is larger than a right angle</p>
+        <span class="mc-range">90° to 180°</span>
+      </div>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="mod-card mc3" onclick="showModule(3)">
+      <div class="mc-badge">Module 3</div>
+      <div class="mc-svg-wrap">
+        <svg viewBox="0 0 110 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Reflex angle ~270° vertex at center -->
+          <line x1="55" y1="55" x2="96" y2="55" stroke="#80ED99" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="55" y1="55" x2="55" y2="14" stroke="#80ED99" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Big reflex arc going clockwise from top ray to right ray (the long way) -->
+          <path d="M 55 34 A 21 21 0 1 1 76 55" fill="rgba(128,237,153,0.12)" stroke="#80ED99" stroke-width="2.5"/>
+          <text x="20" y="78" font-size="13" fill="#80ED99" font-family="Arial" font-weight="bold">270°</text>
+          <!-- Vertex dot -->
+          <circle cx="55" cy="55" r="4" fill="#80ED99"/>
+        </svg>
+      </div>
+      <div class="mc-info">
+        <h3 class="mc-name">Reflex Angles</h3>
+        <p class="mc-desc">A very large angle that is greater than a straight line</p>
+        <span class="mc-range">180° to 360°</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Preset angle buttons (appear after module selected) -->
+  <div class="angle-opts" id="angle-opts"></div>
+
+  <!-- Custom input -->
+  <div class="cust-row">
+    <label>Or type your own:</label>
+    <input type="number" id="cust-in" placeholder="e.g. 65" min="1" max="359" oninput="onCust(this)">
+    <span class="cust-tag" id="cust-tag"></span>
+  </div>
+
+  <!-- Let's Draw button -->
+  <button class="btn-go" id="btn-go" onclick="startDraw()">Let's Draw! ✏️</button>
+
+</div>
+
+<!-- ══ MODULE 1: ACUTE ═════════════════════════════════════════ -->
+<div id="scr-module1" class="screen mod-page m1-page">
+
+  <div class="modp-wrap" id="mod1-picker">
+    <div class="modp-inner">
+      <div class="modp-header">
+        <div class="modp-badge m1-badge">Module 1</div>
+        <h2 class="modp-title m1-title">Acute Angles</h2>
+        <p class="modp-sub">Select an angle below then click Let's Draw!</p>
+      </div>
+      <div class="modp-illus">
+        <svg viewBox="0 0 140 110" width="140" height="110" xmlns="http://www.w3.org/2000/svg">
+          <line x1="18" y1="82" x2="122" y2="82" stroke="#00B4D8" stroke-width="3" stroke-linecap="round"/>
+          <line x1="18" y1="82" x2="72" y2="22" stroke="#00B4D8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 42 82 A 24 24 0 0 1 30 62" fill="none" stroke="#00B4D8" stroke-width="2.5"/>
+          <text x="46" y="78" font-size="14" fill="#00B4D8" font-family="Arial" font-weight="bold">60°</text>
+          <circle cx="18" cy="82" r="5" fill="#00B4D8"/>
+        </svg>
+      </div>
+      <div class="modp-presets" id="mod1-presets">
+        <button class="modp-btn m1-btn" onclick="selectModAngle(30,this,1)">30°</button>
+        <button class="modp-btn m1-btn" onclick="selectModAngle(45,this,1)">45°</button>
+        <button class="modp-btn m1-btn" onclick="selectModAngle(60,this,1)">60°</button>
+        <button class="modp-btn m1-btn" onclick="selectModAngle(75,this,1)">75°</button>
+        <button class="modp-btn m1-btn" onclick="selectModAngle(85,this,1)">85°</button>
+      </div>
+      <div class="modp-cust-row">
+        <label>Or type your own (1° to 89°):</label>
+        <input type="number" id="mod1-custom" class="modp-cust-input"
+               placeholder="e.g. 55" min="1" max="89" oninput="onModCustom(this,1)">
+      </div>
+      <div class="modp-actions">
+        <button class="modp-draw" id="mod1-draw" onclick="startDraw()">Let's Draw! ✏️</button>
+        <button class="modp-back" onclick="show('pick')">← Back to Modules</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alfred-mod-overlay" id="mod1-overlay" style="display:none;">
+    <button class="amp-overlay-back" onclick="show('pick')">← Back to Modules</button>
+    <div class="alfred-mod-popup amp-from-left" id="mod1-popup">
+      <div class="amp-alfred">
+        <svg class="amp-svg" viewBox="0 0 380 290" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="sg-m1" cx="38%" cy="32%" r="68%">
+              <stop offset="0%"   stop-color="#00B4D8"/>
+              <stop offset="30%"  stop-color="#4ECDC4"/>
+              <stop offset="60%"  stop-color="#0080CC"/>
+              <stop offset="85%"  stop-color="#00B4D8"/>
+              <stop offset="100%" stop-color="#80ED99"/>
+            </radialGradient>
+            <linearGradient id="bg-m1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#a8f0c0"/>
+              <stop offset="100%" stop-color="#3aaa55"/>
+            </linearGradient>
+            <linearGradient id="belly-m1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#d4f7e0"/>
+              <stop offset="100%" stop-color="#90e8a8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="185" cy="272" rx="145" ry="12" fill="rgba(0,0,0,0.18)"/>
+          <circle cx="268" cy="146" r="84" fill="url(#sg-m1)" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+          <circle cx="268" cy="146" r="62" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2.5"/>
+          <circle cx="268" cy="146" r="40" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+          <circle cx="268" cy="146" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <circle cx="268" cy="146" r="7"  fill="rgba(255,255,255,0.25)"/>
+          <ellipse cx="240" cy="118" rx="24" ry="15" fill="rgba(255,255,255,0.28)" transform="rotate(-30 240 118)"/>
+          <ellipse cx="172" cy="210" rx="118" ry="44" fill="url(#bg-m1)"/>
+          <ellipse cx="172" cy="226" rx="104" ry="22" fill="url(#belly-m1)"/>
+          <path d="M 278 218 Q 308 234 298 256 Q 286 268 272 256" fill="url(#bg-m1)"/>
+          <circle cx="68" cy="180" r="56" fill="url(#bg-m1)"/>
+          <ellipse cx="50" cy="160" rx="18" ry="13" fill="rgba(255,255,255,0.2)" transform="rotate(-22 50 160)"/>
+          <ellipse cx="40"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <ellipse cx="98"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <path d="M 52 134 C 44 112 38 96 32 79" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="30" cy="74" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="33" cy="75" r="9"  fill="#1A1A2E"/>
+          <circle cx="38" cy="70" r="4"  fill="white"/>
+          <circle cx="27" cy="58" r="7"  fill="#00B4D8"/>
+          <path d="M 84 128 C 90 106 95 90 100 72" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="102" cy="68" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="105" cy="69" r="9"  fill="#1A1A2E"/>
+          <circle cx="110" cy="64" r="4"  fill="white"/>
+          <circle cx="104" cy="52" r="7"  fill="#4ECDC4"/>
+          <ellipse cx="58" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <ellipse cx="74" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <path d="M 40 202 Q 68 226 98 202" fill="none" stroke="#1A1A2E" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 58 218 Q 68 230 78 218" fill="#FF4EB8"/>
+          <circle cx="148" cy="198" r="5" fill="rgba(255,255,255,0.22)"/>
+          <circle cx="180" cy="192" r="4" fill="rgba(255,255,255,0.18)"/>
+          <circle cx="212" cy="202" r="5" fill="rgba(255,255,255,0.22)"/>
+        </svg>
+      </div>
+      <div class="amp-speech m1-speech">
+        <h3 class="amp-hello">Hello <span class="alfred-mod-name">Explorer</span>! 👋</h3>
+        <p class="amp-text">An <strong>Acute angle</strong> is any angle greater than <strong>0°</strong> but less than <strong>90°</strong>. Think of it as a sharp and pointy angle!</p>
+        <p class="amp-text">Examples: <strong class="m1-em">30°, 45°, 60°</strong> and <strong class="m1-em">75°</strong></p>
+        <p class="amp-text">Real life objects: the <strong>tip of a sharpened pencil</strong>, a <strong>slice of pizza</strong>, clock hands at <strong>2 o'clock</strong>, and the <strong>pointed roof</strong> of a house!</p>
+        <button class="amp-understand m1-understand" onclick="dismissAlfred(1)">I Understand! ✅</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══ MODULE 2: OBTUSE ════════════════════════════════════════ -->
+<div id="scr-module2" class="screen mod-page m2-page">
+
+  <div class="modp-wrap" id="mod2-picker">
+    <div class="modp-inner">
+      <div class="modp-header">
+        <div class="modp-badge m2-badge">Module 2</div>
+        <h2 class="modp-title m2-title">Obtuse Angles</h2>
+        <p class="modp-sub">Select an angle below then click Let's Draw!</p>
+      </div>
+      <div class="modp-illus">
+        <svg viewBox="0 0 140 110" width="140" height="110" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="82" x2="130" y2="82" stroke="#FF4EB8" stroke-width="3" stroke-linecap="round"/>
+          <line x1="65" y1="82" x2="22" y2="26" stroke="#FF4EB8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 88 82 A 24 24 0 0 1 50 68" fill="none" stroke="#FF4EB8" stroke-width="2.5"/>
+          <text x="60" y="77" font-size="14" fill="#FF4EB8" font-family="Arial" font-weight="bold">120°</text>
+          <circle cx="65" cy="82" r="5" fill="#FF4EB8"/>
+        </svg>
+      </div>
+      <div class="modp-presets" id="mod2-presets">
+        <button class="modp-btn m2-btn" onclick="selectModAngle(100,this,2)">100°</button>
+        <button class="modp-btn m2-btn" onclick="selectModAngle(115,this,2)">115°</button>
+        <button class="modp-btn m2-btn" onclick="selectModAngle(120,this,2)">120°</button>
+        <button class="modp-btn m2-btn" onclick="selectModAngle(135,this,2)">135°</button>
+        <button class="modp-btn m2-btn" onclick="selectModAngle(150,this,2)">150°</button>
+      </div>
+      <div class="modp-cust-row">
+        <label>Or type your own (91° to 179°):</label>
+        <input type="number" id="mod2-custom" class="modp-cust-input"
+               placeholder="e.g. 110" min="91" max="179" oninput="onModCustom(this,2)">
+      </div>
+      <div class="modp-actions">
+        <button class="modp-draw" id="mod2-draw" onclick="startDraw()">Let's Draw! ✏️</button>
+        <button class="modp-back" onclick="show('pick')">← Back to Modules</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alfred-mod-overlay" id="mod2-overlay" style="display:none;">
+    <button class="amp-overlay-back" onclick="show('pick')">← Back to Modules</button>
+    <div class="alfred-mod-popup amp-from-right" id="mod2-popup">
+      <div class="amp-alfred">
+        <svg class="amp-svg" viewBox="0 0 380 290" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="sg-m2" cx="38%" cy="32%" r="68%">
+              <stop offset="0%"   stop-color="#FF4EB8"/>
+              <stop offset="30%"  stop-color="#9D4EDD"/>
+              <stop offset="60%"  stop-color="#FF6BA8"/>
+              <stop offset="85%"  stop-color="#FF4EB8"/>
+              <stop offset="100%" stop-color="#FFD60A"/>
+            </radialGradient>
+            <linearGradient id="bg-m2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#a8f0c0"/>
+              <stop offset="100%" stop-color="#3aaa55"/>
+            </linearGradient>
+            <linearGradient id="belly-m2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#d4f7e0"/>
+              <stop offset="100%" stop-color="#90e8a8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="185" cy="272" rx="145" ry="12" fill="rgba(0,0,0,0.18)"/>
+          <circle cx="268" cy="146" r="84" fill="url(#sg-m2)" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+          <circle cx="268" cy="146" r="62" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2.5"/>
+          <circle cx="268" cy="146" r="40" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+          <circle cx="268" cy="146" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <circle cx="268" cy="146" r="7"  fill="rgba(255,255,255,0.25)"/>
+          <ellipse cx="240" cy="118" rx="24" ry="15" fill="rgba(255,255,255,0.28)" transform="rotate(-30 240 118)"/>
+          <ellipse cx="172" cy="210" rx="118" ry="44" fill="url(#bg-m2)"/>
+          <ellipse cx="172" cy="226" rx="104" ry="22" fill="url(#belly-m2)"/>
+          <path d="M 278 218 Q 308 234 298 256 Q 286 268 272 256" fill="url(#bg-m2)"/>
+          <circle cx="68" cy="180" r="56" fill="url(#bg-m2)"/>
+          <ellipse cx="50" cy="160" rx="18" ry="13" fill="rgba(255,255,255,0.2)" transform="rotate(-22 50 160)"/>
+          <ellipse cx="40"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <ellipse cx="98"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <path d="M 52 134 C 44 112 38 96 32 79" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="30" cy="74" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="33" cy="75" r="9"  fill="#1A1A2E"/>
+          <circle cx="38" cy="70" r="4"  fill="white"/>
+          <circle cx="27" cy="58" r="7"  fill="#FF4EB8"/>
+          <path d="M 84 128 C 90 106 95 90 100 72" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="102" cy="68" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="105" cy="69" r="9"  fill="#1A1A2E"/>
+          <circle cx="110" cy="64" r="4"  fill="white"/>
+          <circle cx="104" cy="52" r="7"  fill="#9D4EDD"/>
+          <ellipse cx="58" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <ellipse cx="74" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <path d="M 40 202 Q 68 226 98 202" fill="none" stroke="#1A1A2E" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 58 218 Q 68 230 78 218" fill="#FF4EB8"/>
+          <circle cx="148" cy="198" r="5" fill="rgba(255,255,255,0.22)"/>
+          <circle cx="180" cy="192" r="4" fill="rgba(255,255,255,0.18)"/>
+          <circle cx="212" cy="202" r="5" fill="rgba(255,255,255,0.22)"/>
+        </svg>
+      </div>
+      <div class="amp-speech m2-speech">
+        <h3 class="amp-hello">Hello <span class="alfred-mod-name">Explorer</span>! 👋</h3>
+        <p class="amp-text">An <strong>Obtuse angle</strong> is any angle greater than <strong>90°</strong> but less than <strong>180°</strong>. It is wider and more open than a right angle!</p>
+        <p class="amp-text">Examples: <strong class="m2-em">100°, 120°, 135°</strong> and <strong class="m2-em">150°</strong></p>
+        <p class="amp-text">Real life objects: an <strong>open book lying flat</strong>, a <strong>reclining chair</strong>, clock hands at <strong>8 o'clock</strong>, and the wings of a <strong>butterfly when fully spread!</strong></p>
+        <button class="amp-understand m2-understand" onclick="dismissAlfred(2)">I Understand! ✅</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══ MODULE 3: REFLEX ════════════════════════════════════════ -->
+<div id="scr-module3" class="screen mod-page m3-page">
+
+  <div class="modp-wrap" id="mod3-picker">
+    <div class="modp-inner">
+      <div class="modp-header">
+        <div class="modp-badge m3-badge">Module 3</div>
+        <h2 class="modp-title m3-title">Reflex Angles</h2>
+        <p class="modp-sub">Select an angle below then click Let's Draw!</p>
+      </div>
+      <div class="modp-illus">
+        <svg viewBox="0 0 140 110" width="140" height="110" xmlns="http://www.w3.org/2000/svg">
+          <line x1="70" y1="65" x2="125" y2="65" stroke="#80ED99" stroke-width="3" stroke-linecap="round"/>
+          <line x1="70" y1="65" x2="70" y2="15"  stroke="#80ED99" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 70 44 A 21 21 0 1 1 91 65" fill="rgba(128,237,153,0.15)" stroke="#80ED99" stroke-width="2.5"/>
+          <text x="16" y="100" font-size="13" fill="#80ED99" font-family="Arial" font-weight="bold">270°</text>
+          <circle cx="70" cy="65" r="5" fill="#80ED99"/>
+        </svg>
+      </div>
+      <div class="modp-presets" id="mod3-presets">
+        <button class="modp-btn m3-btn" onclick="selectModAngle(200,this,3)">200°</button>
+        <button class="modp-btn m3-btn" onclick="selectModAngle(210,this,3)">210°</button>
+        <button class="modp-btn m3-btn" onclick="selectModAngle(240,this,3)">240°</button>
+        <button class="modp-btn m3-btn" onclick="selectModAngle(270,this,3)">270°</button>
+        <button class="modp-btn m3-btn" onclick="selectModAngle(300,this,3)">300°</button>
+      </div>
+      <div class="modp-cust-row">
+        <label>Or type your own (181° to 359°):</label>
+        <input type="number" id="mod3-custom" class="modp-cust-input"
+               placeholder="e.g. 250" min="181" max="359" oninput="onModCustom(this,3)">
+      </div>
+      <div class="modp-actions">
+        <button class="modp-draw" id="mod3-draw" onclick="startDraw()">Let's Draw! ✏️</button>
+        <button class="modp-back" onclick="show('pick')">← Back to Modules</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alfred-mod-overlay" id="mod3-overlay" style="display:none;">
+    <button class="amp-overlay-back" onclick="show('pick')">← Back to Modules</button>
+    <div class="alfred-mod-popup amp-from-bottom" id="mod3-popup">
+      <div class="amp-alfred">
+        <svg class="amp-svg" viewBox="0 0 380 290" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="sg-m3" cx="38%" cy="32%" r="68%">
+              <stop offset="0%"   stop-color="#80ED99"/>
+              <stop offset="30%"  stop-color="#2ECC71"/>
+              <stop offset="60%"  stop-color="#00B4D8"/>
+              <stop offset="85%"  stop-color="#80ED99"/>
+              <stop offset="100%" stop-color="#2ECC71"/>
+            </radialGradient>
+            <linearGradient id="bg-m3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#a8f0c0"/>
+              <stop offset="100%" stop-color="#3aaa55"/>
+            </linearGradient>
+            <linearGradient id="belly-m3" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#d4f7e0"/>
+              <stop offset="100%" stop-color="#90e8a8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="185" cy="272" rx="145" ry="12" fill="rgba(0,0,0,0.18)"/>
+          <circle cx="268" cy="146" r="84" fill="url(#sg-m3)" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+          <circle cx="268" cy="146" r="62" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2.5"/>
+          <circle cx="268" cy="146" r="40" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+          <circle cx="268" cy="146" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <circle cx="268" cy="146" r="7"  fill="rgba(255,255,255,0.25)"/>
+          <ellipse cx="240" cy="118" rx="24" ry="15" fill="rgba(255,255,255,0.28)" transform="rotate(-30 240 118)"/>
+          <ellipse cx="172" cy="210" rx="118" ry="44" fill="url(#bg-m3)"/>
+          <ellipse cx="172" cy="226" rx="104" ry="22" fill="url(#belly-m3)"/>
+          <path d="M 278 218 Q 308 234 298 256 Q 286 268 272 256" fill="url(#bg-m3)"/>
+          <circle cx="68" cy="180" r="56" fill="url(#bg-m3)"/>
+          <ellipse cx="50" cy="160" rx="18" ry="13" fill="rgba(255,255,255,0.2)" transform="rotate(-22 50 160)"/>
+          <ellipse cx="40"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <ellipse cx="98"  cy="196" rx="13" ry="8" fill="rgba(255,110,150,0.3)"/>
+          <path d="M 52 134 C 44 112 38 96 32 79" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="30" cy="74" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="33" cy="75" r="9"  fill="#1A1A2E"/>
+          <circle cx="38" cy="70" r="4"  fill="white"/>
+          <circle cx="27" cy="58" r="7"  fill="#80ED99"/>
+          <path d="M 84 128 C 90 106 95 90 100 72" stroke="#3aaa55" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="102" cy="68" r="16" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <circle cx="105" cy="69" r="9"  fill="#1A1A2E"/>
+          <circle cx="110" cy="64" r="4"  fill="white"/>
+          <circle cx="104" cy="52" r="7"  fill="#FFD60A"/>
+          <ellipse cx="58" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <ellipse cx="74" cy="192" rx="4" ry="2.5" fill="rgba(0,0,0,0.12)"/>
+          <path d="M 40 202 Q 68 226 98 202" fill="none" stroke="#1A1A2E" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 58 218 Q 68 230 78 218" fill="#FF4EB8"/>
+          <circle cx="148" cy="198" r="5" fill="rgba(255,255,255,0.22)"/>
+          <circle cx="180" cy="192" r="4" fill="rgba(255,255,255,0.18)"/>
+          <circle cx="212" cy="202" r="5" fill="rgba(255,255,255,0.22)"/>
+        </svg>
+      </div>
+      <div class="amp-speech m3-speech">
+        <h3 class="amp-hello">Hello <span class="alfred-mod-name">Explorer</span>! 👋</h3>
+        <p class="amp-text">A <strong>Reflex angle</strong> is any angle greater than <strong>180°</strong> but less than <strong>360°</strong>. It wraps all the way around past a straight line!</p>
+        <p class="amp-text">Examples: <strong class="m3-em">200°, 240°, 270°</strong> and <strong class="m3-em">300°</strong></p>
+        <p class="amp-text">Real life objects: the wide opening of a <strong>folding fan</strong>, a <strong>clock hand sweeping the long way round</strong>, the inner curve of a <strong>boomerang</strong>, and the opening of a <strong>snail shell!</strong></p>
+        <button class="amp-understand m3-understand" onclick="dismissAlfred(3)">I Understand! ✅</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ══ GAME MENU ══════════════════════════════════════════════ -->
+<div id="scr-game-menu" class="screen">
+  <div class="gm-wrap">
+    <div class="gm-header">
+      <button class="gm-back" onclick="show('pick')">← Back to Modules</button>
+      <h2 class="gm-title">🎮 Alfred's <span>Angle Adventure</span></h2>
+      <p class="gm-sub">Help Alfred survive 3 dangerous levels by answering angle questions!</p>
+    </div>
+    <div class="gm-cards">
+
+      <div class="gm-card gmc1" onclick="startGame(1)">
+        <div class="gmc-num">Level 1</div>
+        <div class="gmc-icon">🏔️</div>
+        <h3 class="gmc-name">Mountain Escape</h3>
+        <p class="gmc-desc">A boulder is chasing Alfred down a pointy mountain! Answer Acute angle questions to help him reach safety!</p>
+        <div class="gmc-info">
+          <span>⏱️ 15 seconds</span>
+          <span>❤️ 3 lives</span>
+          <span>10 questions</span>
+        </div>
+        <button class="gmc-play g1-play">Play Level 1 →</button>
+      </div>
+
+      <div class="gm-card gmc2" onclick="startGame(2)">
+        <div class="gmc-num">Level 2</div>
+        <div class="gmc-icon">🔥</div>
+        <h3 class="gmc-name">House on Fire</h3>
+        <p class="gmc-desc">Alfred's home is burning! Answer Obtuse angle questions to help him reach the fire extinguisher before it's too late!</p>
+        <div class="gmc-info">
+          <span>⏱️ 12 seconds</span>
+          <span>❤️ 3 lives</span>
+          <span>10 questions</span>
+        </div>
+        <button class="gmc-play g2-play">Play Level 2 →</button>
+      </div>
+
+      <div class="gm-card gmc3" onclick="startGame(3)">
+        <div class="gmc-num">Level 3</div>
+        <div class="gmc-icon">🐍</div>
+        <h3 class="gmc-name">The Rock Escape</h3>
+        <p class="gmc-desc">Alfred is trapped with a snake behind him and 7 rocks blocking the door! Answer Reflex angle questions to blast the rocks and escape!</p>
+        <div class="gmc-info">
+          <span>⏱️ 10 seconds</span>
+          <span>❤️ 3 lives</span>
+          <span>10 questions</span>
+        </div>
+        <button class="gmc-play g3-play">Play Level 3 →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ GAME PLAY ═══════════════════════════════════════════════ -->
+<div id="scr-game-play" class="screen">
+  <div class="gp-wrap">
+
+    <!-- Top bar -->
+    <div class="gp-topbar">
+      <button class="gp-quit" onclick="quitGame()">✕ Quit</button>
+      <div class="gp-level-label" id="gp-level-lbl">Level 1 — Mountain Escape</div>
+      <div class="gp-hearts" id="gp-hearts">❤️❤️❤️</div>
+      <div class="gp-timer-wrap">
+        <div class="gp-timer" id="gp-timer">15</div>
+      </div>
+    </div>
+
+    <!-- Game canvas scene -->
+    <div class="gp-canvas-wrap">
+      <canvas id="game-canvas" width="680" height="280"></canvas>
+      <!-- Feedback flash -->
+      <div class="gp-flash" id="gp-flash"></div>
+    </div>
+
+    <!-- Question area -->
+    <div class="gp-question-area">
+      <div class="gp-qnum" id="gp-qnum">Question 1 of 10</div>
+      <div class="gp-question" id="gp-question">Loading...</div>
+      <div class="gp-options" id="gp-options"></div>
+      <!-- Wrong answer reveal -->
+      <div class="gp-reveal" id="gp-reveal"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══ GAME RESULT ══════════════════════════════════════════════ -->
+<div id="scr-game-result" class="screen">
+  <div class="gr-wrap">
+    <div class="gr-icon" id="gr-icon">🏆</div>
+    <h2 class="gr-title" id="gr-title">Level Complete!</h2>
+    <p class="gr-msg"  id="gr-msg">Alfred is safe!</p>
+    <div class="gr-score-box">
+      <div class="gr-score-lbl">Score</div>
+      <div class="gr-score" id="gr-score">0</div>
+      <div class="gr-hearts-left" id="gr-hearts-left">❤️❤️❤️</div>
+    </div>
+    <div class="gr-reward" id="gr-reward"></div>
+    <div class="gr-btns">
+      <button class="gr-btn gr-retry" id="gr-retry" onclick="">Try Again 🔄</button>
+      <button class="gr-btn gr-menu"  onclick="show('game-menu')">← Game Menu</button>
+    </div>
+  </div>
+</div>
+<!-- ══ DRAWING SCREEN ══════════════════════════════════════════ -->
+<div id="scr-draw" class="screen">
+  <div class="toolbar">
+    <div class="tb tb-ruler off" id="tb-ruler" onclick="useTool('ruler')">
+      📏<span>RULER</span>
+    </div>
+    <div class="tb tb-proto off" id="tb-proto" onclick="useTool('proto')">
+      <svg width="30" height="18" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 15 A13 13 0 0 1 28 15 Z" fill="rgba(200,235,255,0.4)" stroke="currentColor" stroke-width="2.2"/>
+        <line x1="1"  y1="15" x2="29" y2="15" stroke="currentColor" stroke-width="2.2"/>
+        <circle cx="15" cy="15" r="2" fill="currentColor"/>
+        <line x1="15" y1="2"  x2="15" y2="5.5" stroke="currentColor" stroke-width="1.8"/>
+        <line x1="24" y1="5.5" x2="22" y2="7.5" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="6"  y1="5.5" x2="8"  y2="7.5" stroke="currentColor" stroke-width="1.4"/>
+      </svg>
+      <span>PROTO</span>
+    </div>
+    <div class="tdiv"></div>
+    <div class="tb tb-reset" onclick="resetAll()">🔄<span>RESET</span></div>
+    <div class="tb tb-back"  onclick="show('pick')" style="margin-top:auto;">⬅<span>BACK</span></div>
+  </div>
+
+  <div class="canvas-area">
+    <div class="cwrap" id="cwrap">
+      <canvas id="mc" width="660" height="460"></canvas>
+      <div id="pdiv" class="grab">
+        <svg id="psvg" width="375" height="340" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="sring" id="sring"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="tgt">
+      <div class="tl">Your Target</div>
+      <div class="td" id="p-deg">—</div>
+      <div class="tt" id="p-type">—</div>
+    </div>
+    <div class="calcbox" id="calcbox">
+      <h4>📐 Reflex Calculation</h4>
+      <div class="cf"><em id="cb-t">?</em>° − 180° = <em id="cb-s">?</em>°</div>
+      <div class="cn">Mark this amount on the flipped protractor below the baseline</div>
+    </div>
+    <div class="stepbox">
+      <div class="sn" id="sb-n">Step 1 of 5</div>
+      <div class="st" id="sb-t">Draw the Base Line</div>
+      <div class="sd" id="sb-d">Select Ruler then click two points to draw a horizontal line.</div>
+    </div>
+    <div class="fb" id="fb"></div>
+    <div class="zoom-hint">🔍 Press <strong>Ctrl +</strong> to zoom in and read the small degree numbers!</div>
+    <div class="pl">Progress</div>
+    <div class="psteps" id="psteps"></div>
+  </div>
+</div>
+
+
+<!-- ══ COMPLETE SCREEN ═════════════════════════════════════════ -->
+<div id="scr-complete" class="screen">
+  <div class="cc-i">🎉</div>
+  <h2 class="cc-t">Excellent <span>Work!</span></h2>
+  <p class="cc-s">You drew the angle correctly using a ruler and protractor!</p>
+  <div class="cc-card">
+    <h3>You Drew</h3>
+    <div class="cc-deg"  id="cc-d">—</div>
+    <div class="cc-name" id="cc-n">—</div>
+  </div>
+  <div class="cc-btns">
+   <button class="cc-btn pri" onclick="drawAnother()">Draw Another ✏️</button>
+    <button class="cc-btn sec" onclick="show('pick')">📚 Back to Modules</button>
+  </div>
+</div>
+
+<script src="angle_quest.js"></script>
+</body>
+</html>
